@@ -38,7 +38,7 @@ $(NAME):
 	@echo $(OK)Compiled$(RESET);
 
 deb: init
-#	da sostituire possibilmente  con script python
+#	da sostituire possibilmente con script python
 	@echo $(WARNING)
 	@echo compile.logs
 
