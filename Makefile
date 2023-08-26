@@ -16,6 +16,12 @@ CPPDIR=srcs/cpp/
 
 SRCS=$(CPPDIR){\
 	Brain.cpp,\
+	Gene.cpp,\
+	InnerNode.cpp,\
+	InputNode.cpp,\
+	OutputNode.cpp,\
+	Node.cpp,\
+	Logs.cpp,\
 	main.cpp\
 }
 
@@ -32,7 +38,7 @@ $(NAME):
 	@echo $(OK)Compiled$(RESET);
 
 deb: init
-#	da sostituire con script python
+#	da sostituire possibilmente  con script python
 	@echo $(WARNING)
 	@echo compile.logs
 
