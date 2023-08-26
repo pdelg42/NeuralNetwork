@@ -15,20 +15,14 @@ class Node {
 		// Node( Node &cpy);
 		// Node( unsigned int value );
 	
-	//	END Constructors
-
 	//	Obj Methods
 		virtual string	getType() const = 0;
-
-	//	END Obj Methods
 	
 	//	Static Methods
-	//	END Static Methods
 
 	//	Operators
 		virtual void	operator=( Node &cpy ) = 0; 
 	
-	//	END Operators
 };
 
 class InputNode : public Node {
@@ -37,18 +31,12 @@ class InputNode : public Node {
 		InputNode();
 		~InputNode();
 
-	//	END Constructors
-
 	//	Obj Methods
 		string	getType() const;
-
-	//	END Obj Methods
 	
 	//	Static Methods
-	//	END Static Methods
 
 	//	Operators	
-	//	END Operators
 };
 
 class OutputNode : public Node {
@@ -57,18 +45,12 @@ class OutputNode : public Node {
 		OutputNode();
 		~OutputNode();
 
-	//	END Constructors
-
 	//	Obj Methods
 		string	getType() const;
-
-	//	END Obj Methods
 	
 	//	Static Methods
-	//	END Static Methods
 
 	//	Operators	
-	//	END Operators
 };
 
 class InnerNode : public Node {
@@ -77,18 +59,12 @@ class InnerNode : public Node {
 		InnerNode();
 		~InnerNode();
 
-	//	END Constructors
-
 	//	Obj Methods
 		string	getType() const;
-
-	//	END Obj Methods
 	
 	//	Static Methods
-	//	END Static Methods
 
 	//	Operators	
-	//	END Operators
 };
 
 
@@ -101,24 +77,17 @@ class Gene {
 		~Gene();
 		Gene( Gene &cpy);
 		Gene( unsigned int value );
-	
-	//	END Constructors
 
 	//	Obj Methods
 		uint	getData();
-
-	//	END Obj Methods
 	
 	//	Static Methods
 		static uint	create( uint value );
 		static uint	createRandom();
 
-	//	END Static Methods
-
 	//	Operators
 		void	operator=( Gene &cpy ); 
 	
-	//	END Operators
 };
 
 class Brain {
@@ -130,22 +99,16 @@ class Brain {
 		~Brain();
 		Brain( Brain &cpy);
 		Brain( int n_genomes );
-	
-	//	END Constructors
 
 	//	Obj Methods
 		void	printGenome();
 		Gene	**getGenome();
-
-	//	END Obj Methods
 	
 	//	Static Methods
-	//	END Static Methods
 
 	//	Operators
 		void	operator=( Brain &cpy ); 
 	
-	//	END Operators
 };
 
 #endif /* BRAIN_HPP */
