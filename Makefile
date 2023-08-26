@@ -33,8 +33,7 @@ all: init $(NAME)
 
 $(NAME): 
 #	da sostituire con script python
-	@$(shell echo $(SRCS_LIST) | sed "s/ /\
-	/g")
+	@srcs/python/beautiful_print.py $(SRCS_LIST) 
 #
 	@c++ -o $(NAME) $(SRCS_LIST) 2>> logs/compile.logs;
 	@echo $(OK)Compiled$(RESET);
