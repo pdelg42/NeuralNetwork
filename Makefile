@@ -1,4 +1,5 @@
 NAME=NNetwork
+MAP=map.map
 
 # COLORS
 OK="\033[1;32m"
@@ -30,11 +31,12 @@ SRCS_LIST=$(shell echo $(SRCS) | sed 's/ //g')
 
 all: init $(NAME)
 
-$(NAME):
+$(NAME): 
 #	da sostituire con script python
-	@echo $(SRCS_LIST)
+	@$(shell echo $(SRCS_LIST) | sed "s/ /\
+	/g")
 #
-	@c++ -o $(NAME) $(SRCS_LIST) 2>> logs/compile.logs
+	@c++ -o $(NAME) $(SRCS_LIST) 2>> logs/compile.logs;
 	@echo $(OK)Compiled$(RESET);
 
 deb: init
@@ -51,7 +53,7 @@ deb: init
 	@echo $(RESET)
 #
 
-init: $(LOGS_DIR)
+init: $(LOGS_DIR) $(MAP)
 
 $(LOGS_DIR):
 	@mkdir logs
@@ -59,6 +61,10 @@ $(LOGS_DIR):
 
 re: clean init $(NAME)
 
+$(MAP): 
+	@srcs/python/generate_map.py > map.map
+
 clean:
+	@rm -rf *.map
 	@rm -rf $(LOGS_DIR)
 	@rm -f $(NAME)
